@@ -15,5 +15,7 @@ int main(int argc, char const *argv[]) {
   printf("%lf\n", distancia);
 
   bool bola = is_conv_quadrilateral(quadrilateral);
+
+  double area = calc_area_quadrilateral(quadrilateral);
   return 0;
 }
