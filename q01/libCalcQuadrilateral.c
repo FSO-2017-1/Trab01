@@ -13,7 +13,6 @@ double calc_side_quadrilateral(Cartesian_point cartesian_point1, Cartesian_point
 	return distancia;
 }
 
-//Ajustar retorno dessa função
 bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 	int i = 0;
 	double z[4];
@@ -28,13 +27,15 @@ bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 
 	//Melhorar essa verificação
 	if (z[0] >= 0 && z[1] >= 0 && z[2] >= 0 && z[3] >= 0){
-		printf("Convexo!\n");
+		printf("Quadrilatero convexo\n");
+		return true;
 	}else if (z[0] <= 0 && z[1] <= 0 && z[2] <= 0 && z[3] <= 0){
-		printf("Convexo\n");
+		printf("Quadrilatero convexo\n");
+		return true;
 	}else{
 		printf("Não convexo\n");
+		return false;
 	}
-	return true;
 }
 
 double calc_area_quadrilateral(Quadrilateral *quadrilateral){
@@ -46,6 +47,5 @@ double calc_area_quadrilateral(Quadrilateral *quadrilateral){
 		partialArea = partialArea + (determinant - determinant2);
 	}
 	double area = partialArea/2;
-	printf("%lf\n", area);
 	return area;
 }

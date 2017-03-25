@@ -12,10 +12,12 @@ int main(int argc, char const *argv[]) {
   double distancia;
 
   distancia = calc_side_quadrilateral(quadrilateral->vector[0], quadrilateral->vector[1]);
-  printf("%lf\n", distancia);
 
-  bool bola = is_conv_quadrilateral(quadrilateral);
+  bool is_quadrilateral = is_conv_quadrilateral(quadrilateral);
 
-  double area = calc_area_quadrilateral(quadrilateral);
+  if (is_quadrilateral){
+  	double area = calc_area_quadrilateral(quadrilateral);
+  	printf("Area: %lf", area);
+  }
   return 0;
 }
