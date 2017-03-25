@@ -18,21 +18,25 @@ bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 	double z[4];
 	for (i=0; i<4; i++) {
 	double dx1, dy1, dx2, dy2;
-		dx1 = quadrilateral->vector[(i+2)%4].x - quadrilateral->vector[(i+1)%4].x;
-		dy1 = quadrilateral->vector[(i+2)%4].y - quadrilateral->vector[(i+1)%4].y;
-		dx2 = quadrilateral->vector[(i+1)%4].x - quadrilateral->vector[i%4].x;
-		dy2 = quadrilateral->vector[(i+1)%4].y - quadrilateral->vector[i%4].y;
+		dx1 = quadrilateral->vector[(i+1)%4].x - quadrilateral->vector[i%4].x;
+		dy1 = quadrilateral->vector[(i+1)%4].y - quadrilateral->vector[i%4].y;
+		dx2 = quadrilateral->vector[(i+2)%4].x - quadrilateral->vector[(i+1)%4].x;
+		dy2 = quadrilateral->vector[(i+2)%4].y - quadrilateral->vector[(i+1)%4].y;
 		z[i] = (dx1 * dy2) - (dy1 * dx2);
 	}
 
 	//Melhorar essa verificação
-	if (z[0] >= 0 && z[1] >= 0 && z[2] >= 0 && z[3] >= 0){
-		printf("Quadrilatero convexo\n");
-		return true;
+	if (z[0] == 0 && z[1] == 0 && z[2] == 0 && z[3] == 0){
+		printf("Não convexo\n");
+		return false;
 	}else if (z[0] <= 0 && z[1] <= 0 && z[2] <= 0 && z[3] <= 0){
 		printf("Quadrilatero convexo\n");
 		return true;
-	}else{
+	}else if (z[0] >= 0 && z[1] >= 0 && z[2] >= 0 && z[3] >= 0){
+		printf("Quadrilatero convexo\n");
+		return true;
+	}
+	else{
 		printf("Não convexo\n");
 		return false;
 	}
