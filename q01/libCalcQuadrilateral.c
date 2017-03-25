@@ -24,10 +24,9 @@ bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 		dy2 = quadrilateral->vector[(i+1)%4].y - quadrilateral->vector[i%4].y;
 		z[i] = (dx1 * dy2) - (dy1 * dx2);
 	}
-
 	//Melhorar essa verificação
 	if (z[0] >= 0 && z[1] >= 0 && z[2] >= 0 && z[3] >= 0){
-		printf("Quadrilatero convexo\n");
+		printf("Quadrilatero convexo n\n");
 		return true;
 	}else if (z[0] <= 0 && z[1] <= 0 && z[2] <= 0 && z[3] <= 0){
 		printf("Quadrilatero convexo\n");
