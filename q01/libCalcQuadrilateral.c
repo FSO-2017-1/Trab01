@@ -23,6 +23,7 @@ bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 		dx2 = quadrilateral->vector[(i+2)%4].x - quadrilateral->vector[(i+1)%4].x;
 		dy2 = quadrilateral->vector[(i+2)%4].y - quadrilateral->vector[(i+1)%4].y;
 		z[i] = (dx1 * dy2) - (dy1 * dx2);
+		printf("%lf\n", z[i]);
 	}
 
 	//Melhorar essa verificação
