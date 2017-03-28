@@ -19,5 +19,7 @@ int main(int argc, char const *argv[]) {
   	double area = calc_area_quadrilateral(quadrilateral);
   	printf("Area: %lf", area);
   }
+
+  free(quadrilateral);
   return 0;
 }

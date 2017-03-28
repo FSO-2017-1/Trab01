@@ -17,13 +17,14 @@ bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 	int i = 0;
 	float z[4];
 	for (i=0; i<4; i++) {
-  	float dx1, dy1, dx2, dy2;
+		float dx1, dy1, dx2, dy2;
 		dx1 = quadrilateral->vector[(i+1)%4].x - quadrilateral->vector[i%4].x;
 		dy1 = quadrilateral->vector[(i+1)%4].y - quadrilateral->vector[i%4].y;
 		dx2 = quadrilateral->vector[(i+2)%4].x - quadrilateral->vector[(i+1)%4].x;
 		dy2 = quadrilateral->vector[(i+2)%4].y - quadrilateral->vector[(i+1)%4].y;
 		z[i] = (dx1 * dy2) - (dy1 * dx2);
 		printf("%f\n", z[i]);
+
 	}
 
 	//Melhorar essa verificação
@@ -52,5 +53,10 @@ double calc_area_quadrilateral(Quadrilateral *quadrilateral){
 		partialArea = partialArea + (determinant - determinant2);
 	}
 	double area = partialArea/2;
+<<<<<<< HEAD
 	return area;
 }
+=======
+	return fabs(area);
+}
+>>>>>>> 529c4a741c7123857b7c89216d35357b5c877b62
