@@ -6,10 +6,8 @@
 #include <stdio.h>
 #include "sort_list.h"
 #include "io.h"
+#include "sort.h"
 
-void libera(node *LISTA);
-void insere (node *LISTA);
-node *aloca();
-
+void insertElement(node *LISTA, int num, char *option);
 
 #endif

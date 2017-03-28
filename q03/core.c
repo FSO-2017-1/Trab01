@@ -1,29 +1,16 @@
 #include "core.h"
 
 
-void insereCrescente(node *LISTA)
-{
+void insertElement(node *LISTA, int num, char *option) {
+
+  if (option || "-d") {
+    insertCrescent(LISTA, num);
+  }else if(option || "-r"){
+    printf("Inserir decrescente\n");
+    // Ordenar Descrescente
+  }else{
+    // sair da aplicação com menssagem de erro
+  }
 
 
-}
-void insereDecrescente(node *LISTA)
-{
-
-}
-
-void libera(node *LISTA)
-{
-
-}
-
-node *aloca()
-{
-	node *novo=(node *) malloc(sizeof(node));
-	if(!novo){
-		printf("Sem memoria disponivel!\n");
-		exit(1);
-	}else{
-		printf("Novo elemento: "); scanf("%d", &novo->num);
-		return novo;
-	}
 }

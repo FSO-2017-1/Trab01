@@ -8,39 +8,19 @@
 
 
 int main(int argc, char *argv[]){
-	int elements;
+	int element;
 
-
-	// Criar lista
 	node *lista = (node *) malloc(sizeof(node));
 
-
 	do{
-		scanf("%d",&elements );
-		if (argv[1] || "-d") {
-			printf("Inserir crescente\n");
-			// Ordernar crescente
-		}else if(argv[1] || "-r"){
-			printf("Inserir decrescente\n");
-			// Ordenar Descrescente
-		}else{
-			// sair da aplicação com menssagem de erro
+		scanf("%d",&element );
+		insertElement(lista,element, argv[1]);
+
+		if(element == -1){
+			exibeLista(lista, argv[1]);
 		}
 
-		if(elements == -1){
-				//print_lista(node Lista,char  *argv[]);
-				printf("Imprimir lista");
-			if (argv[1] || "-r") {
-					printf("Ordem Descrescente:\n");
-					printf("Lista:\n");
-				}else if (argv[1] || "-r") {
-					printf("Ordem Descrescente:\n");
-					printf("Lista:\n");
-				}
-
-			}
-
-		}while(elements != -1);
+		}while(element != -1);
 	return 0;
 
 
