@@ -15,15 +15,14 @@ double calc_side_quadrilateral(Cartesian_point cartesian_point1, Cartesian_point
 
 bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 	int i = 0;
-	double z[4];
+	float z[4];
 	for (i=0; i<4; i++) {
-	double dx1, dy1, dx2, dy2;
+	float dx1, dy1, dx2, dy2;
 		dx1 = quadrilateral->vector[(i+1)%4].x - quadrilateral->vector[i%4].x;
 		dy1 = quadrilateral->vector[(i+1)%4].y - quadrilateral->vector[i%4].y;
 		dx2 = quadrilateral->vector[(i+2)%4].x - quadrilateral->vector[(i+1)%4].x;
 		dy2 = quadrilateral->vector[(i+2)%4].y - quadrilateral->vector[(i+1)%4].y;
 		z[i] = (dx1 * dy2) - (dy1 * dx2);
-		printf("%lf\n", z[i]);
 	}
 
 	//Melhorar essa verificação
@@ -52,5 +51,5 @@ double calc_area_quadrilateral(Quadrilateral *quadrilateral){
 		partialArea = partialArea + (determinant - determinant2);
 	}
 	double area = partialArea/2;
-	return area;
+	return abs(area);
 }
