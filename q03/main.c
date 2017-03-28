@@ -6,20 +6,43 @@
 #include "io.h"
 #include "sort.h"
 
+
 int main(int argc, char *argv[]){
-
-    int check;
-
-
-    do{
-      scanf("%d\n", &check );
-      printf("%d\n",check );
+	int elements;
 
 
+	// Criar lista
+	node *lista = (node *) malloc(sizeof(node));
 
-    }while (check != '-1');
+
+	do{
+		scanf("%d",&elements );
+		if (argv[1] || "-d") {
+			printf("Inserir crescente\n");
+			// Ordernar crescente
+		}else if(argv[1] || "-r"){
+			printf("Inserir decrescente\n");
+			// Ordenar Descrescente
+		}else{
+			// sair da aplicação com menssagem de erro
+		}
+
+		if(elements == -1){
+				//print_lista(node Lista,char  *argv[]);
+				printf("Imprimir lista");
+			if (argv[1] || "-r") {
+					printf("Ordem Descrescente:\n");
+					printf("Lista:\n");
+				}else if (argv[1] || "-r") {
+					printf("Ordem Descrescente:\n");
+					printf("Lista:\n");
+				}
+
+			}
+
+		}while(elements != -1);
+	return 0;
 
 
 
-        return 0;
 }

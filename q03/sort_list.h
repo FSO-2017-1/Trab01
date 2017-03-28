@@ -1,10 +1,10 @@
 #ifndef SORT_LIST_H
 #define SORT_LIST_H
 
-typedef struct Sortlist{
-    int *int_list;
-    int list_len;
-    int order;
-} Sortlist;
+struct Node{
+	int num;
+	struct Node *prox;
+};
+typedef struct Node node;
 
 #endif
