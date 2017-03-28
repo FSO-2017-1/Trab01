@@ -51,5 +51,5 @@ double calc_area_quadrilateral(Quadrilateral *quadrilateral){
 		partialArea = partialArea + (determinant - determinant2);
 	}
 	double area = partialArea/2;
-	return abs(area);
+	return fabs(area);
 }
