@@ -11,17 +11,22 @@ int main(int argc, char *argv[]){
 	int element;
 
 	node *lista =  malloc(sizeof(node));
-
+	char *option = argv[1];
+	if (option== NULL) {
+		option = "-d";
+	}
 	do{
+
+
 
 		scanf("%d",&element );
 		if(element == -1){
-			exibeLista(lista->prox, argv[1]);
+			exibeLista(lista->prox, option);
 			return 0;
 		}
 
 		if (element>=0) {
-			insertElement(lista,element, argv[1]);
+			insertElement(lista,element, option);
 		}else{
 			printf("Informe um inteiro positivo \n" );
 		}
