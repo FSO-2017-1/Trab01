@@ -15,20 +15,19 @@ int main(int argc, char *argv[]){
 	do{
 
 		scanf("%d",&element );
+		if(element == -1){
+			exibeLista(lista->prox, argv[1]);
+			return 0;
+		}
+
 		if (element>=0) {
 			insertElement(lista,element, argv[1]);
 		}else{
-			printf("Informe um inteiro positivo \n" );	
+			printf("Informe um inteiro positivo \n" );
 		}
 
 
 
-		if(element == -1){
-				exibeLista(lista->prox, argv[1]);
-			}else{
-
-
-			}
 		}while(element != -1);
 
 	return 0;
