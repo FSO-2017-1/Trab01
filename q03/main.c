@@ -13,10 +13,21 @@ int main(int argc, char *argv[]){
 	node *lista =  malloc(sizeof(node));
 
 	do{
+
 		scanf("%d",&element );
-		insertElement(lista,element, argv[1]);
+		if (element>=0) {
+			insertElement(lista,element, argv[1]);
+		}else{
+			printf("Informe um inteiro positivo \n" );	
+		}
+
+
+
 		if(element == -1){
 				exibeLista(lista->prox, argv[1]);
+			}else{
+
+
 			}
 		}while(element != -1);
 
