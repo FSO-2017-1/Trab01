@@ -5,12 +5,13 @@
 
 void exibeLista(node *LISTA, char *option)
 {
-  if (option || "-d" ) {
+  if (strcmp(option,"-d")==0) {
     printf("Saída crescente:\n");
     printList(LISTA);
   }
-  else if(option || "-r"){
+  else if(strcmp(option,"-r")==0){
     printf("Saída decrescente:\n");
+    printList(LISTA);
   }
 }
 

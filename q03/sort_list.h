@@ -4,6 +4,7 @@
 struct Node{
 	int num;
 	struct Node *prox;
+	struct Node *ant;
 };
 typedef struct Node node;
 
