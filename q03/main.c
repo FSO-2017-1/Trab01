@@ -12,12 +12,12 @@ int main(int argc, char *argv[]){
 
 	node *lista =  malloc(sizeof(node));
 	char *option = argv[1];
+
 	if (option== NULL) {
 		option = "-d";
 	}
+
 	do{
-
-
 
 		scanf("%d",&element );
 		if(element == -1){
@@ -31,12 +31,8 @@ int main(int argc, char *argv[]){
 			printf("Informe um inteiro positivo \n" );
 		}
 
-
-
 		}while(element != -1);
 
 	return 0;
-
-
 
 }

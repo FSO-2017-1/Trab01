@@ -9,8 +9,6 @@ void insertElement(node *LISTA, int num, char *option) {
   }else if(strcmp(option, "-r")==0){
     LISTA->num = HIGH;
     insertDecrescent(LISTA, num);
-  }else{
-    // sair da aplicação com menssagem de erro
   }
 
 
