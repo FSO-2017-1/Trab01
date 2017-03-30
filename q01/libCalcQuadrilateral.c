@@ -23,13 +23,11 @@ bool is_conv_quadrilateral(Quadrilateral *quadrilateral){
 		dx2 = quadrilateral->vector[(i+2)%4].x - quadrilateral->vector[(i+1)%4].x;
 		dy2 = quadrilateral->vector[(i+2)%4].y - quadrilateral->vector[(i+1)%4].y;
 		z[i] = (dx1 * dy2) - (dy1 * dx2);
-		printf("%f\n", z[i]);
-
 	}
 
 	//Melhorar essa verificação
 	if (z[0] == 0 && z[1] == 0 && z[2] == 0 && z[3] == 0){
-		printf("Não convexo\n");
+		printf("Quadrilatero nao convexo\n");
 		return false;
 	}else if (z[0] <= 0 && z[1] <= 0 && z[2] <= 0 && z[3] <= 0){
 		printf("Quadrilatero convexo\n");
@@ -53,10 +51,6 @@ double calc_area_quadrilateral(Quadrilateral *quadrilateral){
 		partialArea = partialArea + (determinant - determinant2);
 	}
 	double area = partialArea/2;
-<<<<<<< HEAD
-	return area;
-}
-=======
 	return fabs(area);
 }
->>>>>>> 529c4a741c7123857b7c89216d35357b5c877b62
+
