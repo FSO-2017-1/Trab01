@@ -1,7 +1,7 @@
 system: clean ioQuadrilateral.o main.o libCalcQuadrilateral.o
 	gcc main.o ioQuadrilateral.o libCalcQuadrilateral.o -lm -o run
 	rm -rf *.o
-	./run 0 0 0 1 1 1 1 0
+	./run 
 
 main.o: main.c
 	gcc -c main.c -o main.o -lm
